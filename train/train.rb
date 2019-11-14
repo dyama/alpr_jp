@@ -1,5 +1,8 @@
 #!/usr/bin/env ruby
+# coding: utf-8
+
 require 'fileutils'
+require 'rmagick'
 
 dir = File.expand_path(File.dirname(__FILE__))
 pdir = "#{dir}/pos"
@@ -14,8 +17,6 @@ bindir = "#{dir}/../../opencv-3.4.8/build/bin"
 
 score = 0.5
 
-iw = 200
-ih = 100
 w = 36
 h = 18
 
@@ -32,7 +33,12 @@ files = files.sample(500)
 File.write(nlist, files.join)
 nbneg = files.size
 
-files = Dir.glob("#{pdir}/*.{jpg,png,jpeg}").to_a.map {|file| "#{File.basename(file)} 1 0 0 #{iw} #{ih}\n" }
+files = Dir.glob("#{pdir}/*.{jpg,png,jpeg}").to_a.map {|file|
+  image = Magick::Image.read(file).first
+  iw = image.columns
+  ih = image.rows
+  "#{File.basename(file)} 1 0 0 #{iw} #{ih}\n"
+}
 File.write(plist, files.join)
 nbpos = files.size
 
