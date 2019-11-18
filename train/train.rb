@@ -29,7 +29,7 @@ FileUtils.rm_r(rdir) if Dir.exist?(rdir)
 FileUtils.mkdir_p(rdir)
 
 files = Dir.glob("#{ndir}/*.{jpg,png,jpeg}").to_a.map {|file| "#{File.expand_path(file)}\n" }
-files = files.sample(250)
+files = files.sample(300)
 File.write(nlist, files.join)
 nbneg = files.size
 
