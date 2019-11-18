@@ -15,11 +15,13 @@ rdir = "#{dir}/res"
 libdir = "#{dir}/../../opencv-3.4.8/build/lib"
 bindir = "#{dir}/../../opencv-3.4.8/build/bin"
 
-score = 0.85
-nbneg = 250
+score = 0.9
+nbneg = 260
 
-w = 36
-h = 18
+# w = 36; h = 18
+# w = 36; h = 24
+# w = 25; h = 25
+w = 28; h = 24
 
 ["#{ndir}/*.txt", "#{pdir}/*.vec", "#{pdir}/*.txt" ].each do |pattern|
   Dir.glob(pattern).each do |file|
@@ -66,7 +68,7 @@ args = {
   h: h,
   bt: 'GAB',
   minHitRate: 0.999,
-  maxFalseAlarmRate: 0.1,
+  maxFalseAlarmRate: 0.05,
   maxDepth: 1,
   # mode: 'ALL',
   precalcValBufSize: 5000,
