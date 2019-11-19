@@ -85,3 +85,11 @@ Open ALPR では、OpenCV と Tessaract-OCR を使い、以下の解析を行い
 ### 著作権
 
 画像の著作権は、画像作成者にありますが、このリポジトリに組み込まれた時より MIT License のもと、配布されます。
+
+## 参考リンク
+
+* https://www.openalpr.com/
+* https://github.com/openalpr/openalpr
+* https://github.com/openalpr/train-detector
+* https://github.com/openalpr/train-ocr
+* http://nplate.html.xdomain.jp/index.html
