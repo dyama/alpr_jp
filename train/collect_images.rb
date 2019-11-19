@@ -16,10 +16,13 @@ FileUtils.mkdir_p(dest_dir)
 
 ctable = ('0'..'9').to_a + ('a'..'f').to_a
 
+c = 0
 Dir.glob("#{project_dir}/{#{targets.join(',')}}/**/*.{jpg,jpeg,png}") do |file|
   dest = "#{dest_dir}/#{ctable.sample(10).join}#{File.extname(file)}"
   FileUtils.copy(file, dest)
   # `convert -resize #{w}x#{h}! "#{file}" "#{dest}"`
   puts "#{file} => #{dest}"
+  c += 1
 end
 
+puts "#{c} images copied."
