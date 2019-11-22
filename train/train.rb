@@ -16,7 +16,7 @@ libdir = "#{dir}/../../opencv-3.4.8/build/lib"
 bindir = "#{dir}/../../opencv-3.4.8/build/bin"
 
 score = 0.95
-nbneg = 240
+nbneg = 220
 
 # w = 36; h = 18
 # w = 36; h = 24

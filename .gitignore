@@ -3,4 +3,5 @@ train/pos
 *.swp
 train/res
 train/run_train.sh
+train/sample/*/res/*.*
 
